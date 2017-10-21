@@ -1,21 +1,48 @@
 <!doctype html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{% block title %}Home page{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Antoine Nouvene">
+
+        <title>{% block title %}Dashboard{% endblock %}</title>
+
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('bundles/app/css/toolkit-inverse.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('bundles/app/css/style.css') }}">
+
+            <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+            <link href="{{ asset('bundles/app/css/toolkit-inverse.min.css') }}" rel="stylesheet" >
+            <link href="{{ asset('bundles/app/css/docs.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/app/css/application.css') }}" rel="stylesheet">
+
+            <style>
+                /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+                /* this chunk of css is not part of the toolkit :) */
+                body {
+                    width: 1px;
+                    min-width: 100%;
+                    *width: 100%;
+                }
+            </style>
+
         {% endblock %}
     </head>
-    <body>
+    {#<body>#}
         {% block body %}{% endblock %}
         {% block javascripts %}
-            <script type="text/javascript" src="{{ asset('bundles/app/js/toolkit.min.js') }}"></script>
-            <script src="{{ asset('bundles/app/js/script.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/chart.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/tablesorter.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/toolkit.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/application.js') }}"></script>
+            <script>
+                // execute/clear BS loaders for docs
+                $(function () {
+                    while (window.BS && window.BS.loader && window.BS.loader.length) {
+                        (window.BS.loader.pop())()
+                    }
+                })
+            </script>
         {% endblock %}
     </body>
 </html>

@@ -1,3 +1,22 @@
-home:
-    path: /
-    defaults: { _controller: AppBundle:Default:index }
+over1:
+  path: /
+  defaults: { _controller: AppBundle:Default:index1 }
+over1_light:
+  path: /light-ui
+  defaults: { _controller: AppBundle:Default:index1light }
+over2:
+  path: /overview-icone
+  defaults: { _controller: AppBundle:Default:index2 }
+over3:
+  path: /overview-fluid
+  defaults: { _controller: AppBundle:Default:index3}
+pec:
+  path: /tickets-pris-en-compte
+  defaults: { _controller: AppBundle:Default:pec }
+res:
+  path: /tickets-resolus
+  defaults: { _controller: AppBundle:Default:res }
+doc:
+  path: /documentation
+  defaults: { _controller: AppBundle:Default:doc }
+
