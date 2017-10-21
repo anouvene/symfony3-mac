@@ -19,3 +19,7 @@ git push -u origin master
 Pour déposer sur github :
 =========================
 git push --set-upstream origin master
+
+Recommandations Symfony 3 :
+=========================
+php bin/symfony_requirements
